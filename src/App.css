@@ -13,6 +13,13 @@
   position: static;
 }
 
+.responsive {
+  max-width: 492px;
+  width: 100%;
+  height: auto;
+  border-radius: 21px;
+}
+
 @media screen and (max-width: 992px) {
   .myBtns {
     position: absolute;

@@ -1,10 +1,15 @@
-import {useState } from 'react'
+import {useEffect, useState} from 'react'
 import {useNavigate} from "react-router-dom";
 import './App.css'
 
 function LeftSide() {
     const [active, setActive] = useState("");
     const navigate = useNavigate();
+    
+    useEffect(() => {
+        handleClick();
+    }, [])
+    
     const handleClick = () => {
         setActive(window.location.pathname);
     }
