@@ -4,6 +4,6 @@ import vitePluginRequire from "vite-plugin-require";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), vitePluginRequire()],
+  plugins: [react(), vitePluginRequire.default()],
   base: "/PortfolioSite",
 })
