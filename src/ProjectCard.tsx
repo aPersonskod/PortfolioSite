@@ -1,6 +1,14 @@
-import { useState } from "react";
+import {JSX, useState} from "react";
 import {useNavigate} from "react-router-dom";
-function ProjectCard({imgSrc, imgAlt, header, description, navigatePath}) {
+
+interface ProjectCardProps {
+    imgSrc: string;
+    imgAlt: string;
+    header: string;
+    description: string;
+    navigatePath: string;
+}
+function ProjectCard({imgSrc, imgAlt, header, description, navigatePath}: ProjectCardProps) : JSX.Element {
     const [isHovering, setIsHovering] = useState(false);
     const navigate = useNavigate();
     const handleMouseOver = () => {
@@ -35,7 +43,6 @@ function ProjectCard({imgSrc, imgAlt, header, description, navigatePath}) {
     const pHoverStyle = {
         backgroundColor: '#bab9b9'
     }
-    
     return (
         <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} style={{cursor: 'pointer'}} onClick={() => {handleNavigate()}}>
             <img style={isHovering ? imgHoverStyle : imgStyle} src={imgSrc} alt={imgAlt}/>
