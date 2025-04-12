@@ -1,9 +1,15 @@
 import { useState } from "react";
-function ProjectCard({imgSrc, imgAlt, header, description}) {
+import {useNavigate} from "react-router-dom";
+function ProjectCard({imgSrc, imgAlt, header, description, navigatePath}) {
     const [isHovering, setIsHovering] = useState(false);
+    const navigate = useNavigate();
     const handleMouseOver = () => {
         setIsHovering(true);
     };
+    
+    function handleNavigate(){
+        navigate(navigatePath);
+    }
 
     const handleMouseOut = () => {
         setIsHovering(false);
@@ -27,13 +33,13 @@ function ProjectCard({imgSrc, imgAlt, header, description}) {
         backgroundColor: 'transparent',
     }
     const pHoverStyle = {
-        backgroundColor: '#979797'
+        backgroundColor: '#bab9b9'
     }
     
     return (
-        <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+        <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} style={{cursor: 'pointer'}} onClick={() => {handleNavigate()}}>
             <img style={isHovering ? imgHoverStyle : imgStyle} src={imgSrc} alt={imgAlt}/>
-            <p className='fs24' style={isHovering ? pHoverStyle : pStyle}>{header}</p>
+            <p className='fs21' style={isHovering ? pHoverStyle : pStyle}>{header}</p>
             <p className='fs18 color-gray' style={{marginTop:"-20px"}}>{description}</p>
         </div>
     );

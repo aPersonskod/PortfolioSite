@@ -25,6 +25,9 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+p{
+  text-wrap: wrap;
+}
 
 button {
   border-radius: 30px;
@@ -46,5 +49,6 @@ button:hover {
 }
 .fs32{ font-size: 32px;}
 .fs24{ font-size: 24px;}
+.fs21{ font-size: 21px;}
 .fs18{ font-size: 18px;}
 .color-gray{ color: #9B9B9B;}
