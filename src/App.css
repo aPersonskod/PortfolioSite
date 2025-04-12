@@ -7,22 +7,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: fixed;
 }
 
 .myBtns{
   position: static;
 }
 
+.cards{
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 992px) {
   .myBtns {
-    position: absolute;
     top: 96vh;
     left: 50vw;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    position: fixed;
   }
 
   .leftSideBar {
     min-height: 5vh;
+    position: static;
+  }
+
+  .cards{
+    margin-bottom: 100px;
   }
 }

@@ -42,7 +42,7 @@ function Projects() {
     ];
     return (
         <>
-            <div className='container' style={{marginTop: "10px"}}>
+            <div className='container cards' style={{marginTop: "10px"}}>
                 <div className='row'>
                     {projects.map((p) => (
                         <div className='col col-sm-12 col-lg-6'>
