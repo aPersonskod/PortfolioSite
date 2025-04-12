@@ -56,7 +56,7 @@ function CurrentProject() {
     return (
         <div>
             <img src={currentProject.img} alt={currentProject.name} style={imgStyle}/>
-            <p className='fs36'>{currentProject.name}</p>
+            <p style={{marginTop: "12px"}} className='fs36'>{currentProject.name}</p>
             <ProjectDescription/>
         </div>
     );
