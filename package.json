@@ -19,6 +19,8 @@
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.0",
+    "vite-plugin-commonjs": "^0.10.4",
+    "vite-plugin-node-polyfills": "^0.23.0",
     "vite-plugin-require": "^1.2.14"
   },
   "devDependencies": {

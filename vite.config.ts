@@ -1,9 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import vitePluginRequire from "vite-plugin-require";
+import commonjs from 'vite-plugin-commonjs'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), vitePluginRequire.default()],
+  plugins: [react(), commonjs()],
   base: "/PortfolioSite",
+  build: {
+    commonjsOptions: { transformMixedEsModules: true } // Change
+  }
 })
