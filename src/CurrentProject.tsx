@@ -59,7 +59,7 @@ function CurrentProject() {
         `${startPath}puti`
     ];
     const navigate = useNavigate();
-    const [carousel, setCarousel] = useState(new Carousel(links));
+    const [carousel] = useState(new Carousel(links));
     const [currentLink, setCurrentLink] = useState("");
     useEffect(() => {
         let project = projects.find(x => x.path === window.location.pathname)!;
