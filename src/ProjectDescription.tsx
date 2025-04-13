@@ -203,7 +203,7 @@ function ProjectDescription() {
         },
     ]
     return(
-        <div className='container tabAutoMargin'>
+        <div className='container'>
             <div className='row'>
                 <div className='col col-8'>
                     {herota.find(x => x.path === window.location.pathname)!.descriptions.map(proj => (
