@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import ProjectDescription from "./ProjectDescription.tsx";
 import {useNavigate} from "react-router-dom";
+import HamburgerMenu from "./HamburgerMenu";
 
 function CurrentProject() {
     const [currentProject, setCurrentProject] = useState({name: "", img: ""});
@@ -79,8 +80,15 @@ function CurrentProject() {
             <p style={{marginTop: "12px"}} className='fs36'>{currentProject.name}</p>
             <ProjectDescription/>
             {/*previous next hamburger*/}
-            <button onClick={() => previous()}>Previous</button>
-            <button onClick={() => next()}>Next</button>
+            <div className='d-flex justify-content-between' style={{maxWidth:'60vw'}}>
+                <div>
+                    <button onClick={() => previous()}>Previous</button>
+                    <button onClick={() => next()}>Next</button>
+                </div>
+                <div style={{marginTop:'8px'}}>
+                    <HamburgerMenu />
+                </div>
+            </div>
         </div>
     );
 }
