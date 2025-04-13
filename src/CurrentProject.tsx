@@ -82,8 +82,8 @@ function CurrentProject() {
             {/*previous next hamburger*/}
             <div className='d-flex justify-content-between' style={{maxWidth:'60vw'}}>
                 <div>
-                    <button onClick={() => previous()}>Previous</button>
-                    <button onClick={() => next()}>Next</button>
+                    <button onClick={() => previous()}>Предыдущий</button>
+                    <button onClick={() => next()} style={{marginLeft:'8px'}}>Следующий</button>
                 </div>
                 <div style={{marginTop:'8px'}}>
                     <HamburgerMenu />
