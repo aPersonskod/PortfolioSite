@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./HamburgerMenu.css";
+import {Link, useNavigate} from "react-router-dom";
 
 const HamburgerMenu = () => {
     const startPath = "/PortfolioSite/project/";
@@ -10,6 +11,7 @@ const HamburgerMenu = () => {
         {path:`${startPath}avto`, header:"АвтоМир Управление автосалоном"},
         {path:`${startPath}puti`, header:"Путепровод Редактор маршрутов"}
     ];
+    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false); // State to track menu visibility
 
     // Open the menu
@@ -21,6 +23,11 @@ const HamburgerMenu = () => {
     const closeMenu = () => {
         setIsOpen(false);
     };
+    function closeMenuNav(path: string) {
+        navigate(path);
+        setIsOpen(false);
+        window.location.reload();
+    }
 
     return (
         <div className="hamburger-container">
@@ -42,47 +49,12 @@ const HamburgerMenu = () => {
                 <ul>
                     <ul>
                         {links.map((link) => (
-                            <li><a href={link.path}>{link.header}</a></li>
+                            <li onClick={() => closeMenuNav(link.path)}><Link to={link.path}>{link.header}</Link></li>
                         ))}
                     </ul>
                 </ul>
             </nav>
         </div>
-        /*<div className="hamburger-container">
-            {/!* Hamburger Icon *!/}
-            <div
-                className={`hamburger-icon ${isOpen ? "open" : ""}`}
-                onClick={toggleMenu}
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-    
-            {/!* Navigation Menu *!/}
-            <nav className={`nav-menu ${isOpen ? "active" : ""}`}>
-                {/!* Close Button Inside Menu *!/}
-                <button className="close-button" onClick={closeMenu}>
-                    &times; {/!* Unicode for "X" symbol *!/}
-                </button>
-    
-                {/!* Menu Links *!/}
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-                {/!* Navigation Menu *!/}
-                <nav className={`nav-menu ${isOpen ? "active" : ""}`}>
-                    <ul>
-                        {links.map((link) => (
-                            <li><a href={link.path}>{link.header}</a></li>
-                        ))}
-                    </ul>
-                </nav>
-            </div>*/
     );
 };
 
